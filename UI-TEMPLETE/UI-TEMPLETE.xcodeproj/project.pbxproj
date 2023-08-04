@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC6167712A7CC30E0071D712 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6167702A7CC30E0071D712 /* SliderView.swift */; };
 		BCF9D1CB2A7BA147002DBFD6 /* UI_TEMPLETEApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF9D1CA2A7BA147002DBFD6 /* UI_TEMPLETEApp.swift */; };
 		BCF9D1CD2A7BA147002DBFD6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF9D1CC2A7BA147002DBFD6 /* ContentView.swift */; };
 		BCF9D1CF2A7BA148002DBFD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCF9D1CE2A7BA148002DBFD6 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC6167702A7CC30E0071D712 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
 		BCF9D1C72A7BA147002DBFD6 /* UI-TEMPLETE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UI-TEMPLETE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCF9D1CA2A7BA147002DBFD6 /* UI_TEMPLETEApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI_TEMPLETEApp.swift; sourceTree = "<group>"; };
 		BCF9D1CC2A7BA147002DBFD6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -82,6 +84,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC61676F2A7CBF9A0071D712 /* Slider */ = {
+			isa = PBXGroup;
+			children = (
+				BC6167702A7CC30E0071D712 /* SliderView.swift */,
+			);
+			path = Slider;
+			sourceTree = "<group>";
+		};
 		BCF9D1BE2A7BA147002DBFD6 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +115,7 @@
 		BCF9D1C92A7BA147002DBFD6 /* UI-TEMPLETE */ = {
 			isa = PBXGroup;
 			children = (
+				BC61676F2A7CBF9A0071D712 /* Slider */,
 				BCF9D2002A7BA562002DBFD6 /* Common */,
 				BCF9D1F82A7BA194002DBFD6 /* Calendar */,
 				BCF9D1CA2A7BA147002DBFD6 /* UI_TEMPLETEApp.swift */,
@@ -301,6 +312,7 @@
 				BCF9D1CB2A7BA147002DBFD6 /* UI_TEMPLETEApp.swift in Sources */,
 				BCF9D1FB2A7BA1C8002DBFD6 /* CalendarView.swift in Sources */,
 				BCF9D1FC2A7BA1C8002DBFD6 /* CalendarVM.swift in Sources */,
+				BC6167712A7CC30E0071D712 /* SliderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

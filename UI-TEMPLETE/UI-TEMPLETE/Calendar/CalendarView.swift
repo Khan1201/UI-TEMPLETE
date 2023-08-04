@@ -6,7 +6,7 @@ struct CalendarView: View {
   @StateObject var viewModel: CalendarVM = CalendarVM()
   
   @State private var page: Page = .withIndex(0)
-  @State private var height: CGFloat = 0
+  @State private var size: CGSize = CGSize()
     
   var body: some View {
     
@@ -16,7 +16,7 @@ struct CalendarView: View {
           headerView
           calendarGridView
         }
-        .getHeight(height: $height)
+        .getSize(size: $size)
       }
       .onPageWillTransition { result in
         switch result {
@@ -32,7 +32,7 @@ struct CalendarView: View {
       .background {
         Color.red.opacity(0.5)
       }
-      .frame(maxWidth: .infinity, maxHeight: height)
+      .frame(maxWidth: .infinity, maxHeight: size.height)
     }
     .task {
       page = .withIndex(viewModel.dateForMonthToInt - 1)
