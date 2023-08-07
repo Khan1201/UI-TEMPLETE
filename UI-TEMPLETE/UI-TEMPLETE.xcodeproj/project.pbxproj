@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BC6167712A7CC30E0071D712 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6167702A7CC30E0071D712 /* SliderView.swift */; };
+		BCB147692A80D45400857F16 /* SliderVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB147682A80D45400857F16 /* SliderVM.swift */; };
 		BCF9D1CB2A7BA147002DBFD6 /* UI_TEMPLETEApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF9D1CA2A7BA147002DBFD6 /* UI_TEMPLETEApp.swift */; };
 		BCF9D1CD2A7BA147002DBFD6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF9D1CC2A7BA147002DBFD6 /* ContentView.swift */; };
 		BCF9D1CF2A7BA148002DBFD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCF9D1CE2A7BA148002DBFD6 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		BC6167702A7CC30E0071D712 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
+		BCB147682A80D45400857F16 /* SliderVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderVM.swift; sourceTree = "<group>"; };
 		BCF9D1C72A7BA147002DBFD6 /* UI-TEMPLETE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UI-TEMPLETE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCF9D1CA2A7BA147002DBFD6 /* UI_TEMPLETEApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI_TEMPLETEApp.swift; sourceTree = "<group>"; };
 		BCF9D1CC2A7BA147002DBFD6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				BC6167702A7CC30E0071D712 /* SliderView.swift */,
+				BCB147682A80D45400857F16 /* SliderVM.swift */,
 			);
 			path = Slider;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				BCF9D1FB2A7BA1C8002DBFD6 /* CalendarView.swift in Sources */,
 				BCF9D1FC2A7BA1C8002DBFD6 /* CalendarVM.swift in Sources */,
 				BC6167712A7CC30E0071D712 /* SliderView.swift in Sources */,
+				BCB147692A80D45400857F16 /* SliderVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
