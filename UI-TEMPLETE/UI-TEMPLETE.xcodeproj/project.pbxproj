@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BC6167712A7CC30E0071D712 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6167702A7CC30E0071D712 /* SliderView.swift */; };
+		BCAF99162A80E25D00AF3469 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = BCAF99152A80E25D00AF3469 /* DGCharts */; };
+		BCAF99192A80E30C00AF3469 /* Pratice.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAF99182A80E30C00AF3469 /* Pratice.swift */; };
 		BCB147692A80D45400857F16 /* SliderVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB147682A80D45400857F16 /* SliderVM.swift */; };
 		BCF9D1CB2A7BA147002DBFD6 /* UI_TEMPLETEApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF9D1CA2A7BA147002DBFD6 /* UI_TEMPLETEApp.swift */; };
 		BCF9D1CD2A7BA147002DBFD6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF9D1CC2A7BA147002DBFD6 /* ContentView.swift */; };
@@ -42,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		BC6167702A7CC30E0071D712 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
+		BCAF99182A80E30C00AF3469 /* Pratice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pratice.swift; sourceTree = "<group>"; };
 		BCB147682A80D45400857F16 /* SliderVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderVM.swift; sourceTree = "<group>"; };
 		BCF9D1C72A7BA147002DBFD6 /* UI-TEMPLETE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UI-TEMPLETE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCF9D1CA2A7BA147002DBFD6 /* UI_TEMPLETEApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI_TEMPLETEApp.swift; sourceTree = "<group>"; };
@@ -65,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCAF99162A80E25D00AF3469 /* DGCharts in Frameworks */,
 				BCF9D1F72A7BA17C002DBFD6 /* SwiftUIPager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,6 +99,14 @@
 			path = Slider;
 			sourceTree = "<group>";
 		};
+		BCAF99172A80E2E200AF3469 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				BCAF99182A80E30C00AF3469 /* Pratice.swift */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
 		BCF9D1BE2A7BA147002DBFD6 = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +130,7 @@
 		BCF9D1C92A7BA147002DBFD6 /* UI-TEMPLETE */ = {
 			isa = PBXGroup;
 			children = (
+				BCAF99172A80E2E200AF3469 /* Chart */,
 				BC61676F2A7CBF9A0071D712 /* Slider */,
 				BCF9D2002A7BA562002DBFD6 /* Common */,
 				BCF9D1F82A7BA194002DBFD6 /* Calendar */,
@@ -191,6 +204,7 @@
 			name = "UI-TEMPLETE";
 			packageProductDependencies = (
 				BCF9D1F62A7BA17C002DBFD6 /* SwiftUIPager */,
+				BCAF99152A80E25D00AF3469 /* DGCharts */,
 			);
 			productName = "UI-TEMPLETE";
 			productReference = BCF9D1C72A7BA147002DBFD6 /* UI-TEMPLETE.app */;
@@ -266,6 +280,7 @@
 			mainGroup = BCF9D1BE2A7BA147002DBFD6;
 			packageReferences = (
 				BCF9D1F52A7BA17C002DBFD6 /* XCRemoteSwiftPackageReference "SwiftUIPager" */,
+				BCAF99142A80E25D00AF3469 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = BCF9D1C82A7BA147002DBFD6 /* Products */;
 			projectDirPath = "";
@@ -316,6 +331,7 @@
 				BCF9D1FB2A7BA1C8002DBFD6 /* CalendarView.swift in Sources */,
 				BCF9D1FC2A7BA1C8002DBFD6 /* CalendarVM.swift in Sources */,
 				BC6167712A7CC30E0071D712 /* SliderView.swift in Sources */,
+				BCAF99192A80E30C00AF3469 /* Pratice.swift in Sources */,
 				BCB147692A80D45400857F16 /* SliderVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -674,6 +690,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		BCAF99142A80E25D00AF3469 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		BCF9D1F52A7BA17C002DBFD6 /* XCRemoteSwiftPackageReference "SwiftUIPager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/fermoya/SwiftUIPager";
@@ -685,6 +709,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BCAF99152A80E25D00AF3469 /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BCAF99142A80E25D00AF3469 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
+		};
 		BCF9D1F62A7BA17C002DBFD6 /* SwiftUIPager */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BCF9D1F52A7BA17C002DBFD6 /* XCRemoteSwiftPackageReference "SwiftUIPager" */;
