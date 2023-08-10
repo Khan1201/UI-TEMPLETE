@@ -23,7 +23,11 @@ final class CalendarPerWeekVM: ObservableObject {
     calendar.locale = Locale(identifier: "ko")
     return calendar.shortWeekdaySymbols
   }
-  
+}
+
+// MARK: - Set actions..
+
+extension CalendarPerWeekVM {
   func setMaxDayInMonth(month: Date) {
     maxDayInMonth = Calendar.current.range(of: .day, in: .month, for: month)?.count ?? 0
   }
@@ -106,8 +110,12 @@ final class CalendarPerWeekVM: ObservableObject {
     daysInCurrentWeek = list[currentWeek - 1]
     isSetDaysInCurrentWeek = true
   }
-  
-  func weekWillChangeAction(isLeft: Bool) {
+}
+
+// MARK: - Gestures..
+
+extension CalendarPerWeekVM {
+  func arrowOnTapGesture(isLeft: Bool) {
     let maxWeekCountInMonth = self.numOfDaysPerWeekInMonth.count
 
     if isLeft {
@@ -163,7 +171,11 @@ final class CalendarPerWeekVM: ObservableObject {
       )
     }
   }
-  
+}
+
+// MARK: - Appear(OnAppear, task) actions..
+
+extension CalendarPerWeekVM {
   func calendarPerWeekViewOnAppearAction() {
     setMaxDayInMonth(month: self.currentMonth)
     setFirstWeekdayInMonth(month: self.currentMonth)

@@ -21,7 +21,7 @@ struct CalendarPerWeekView: View {
           .resizable()
           .frame(width: 30, height: 30)
           .onTapGesture {
-            viewModel.weekWillChangeAction(isLeft: true)
+            viewModel.arrowOnTapGesture(isLeft: true)
           }
         
         HStack(alignment: .center, spacing: 10) {
@@ -42,7 +42,7 @@ struct CalendarPerWeekView: View {
           .resizable()
           .frame(width: 30, height: 30)
           .onTapGesture {
-            viewModel.weekWillChangeAction(isLeft: false)
+            viewModel.arrowOnTapGesture(isLeft: false)
           }
       }
     }
