@@ -2,7 +2,6 @@ import SwiftUI
 import SwiftUIPager
 
 struct CalendarView: View {
-  @State var offset: CGSize = CGSize()
   @StateObject var viewModel: CalendarVM = CalendarVM()
   
   @State private var page: Page = .withIndex(0)
@@ -36,10 +35,12 @@ struct CalendarView: View {
     }
     .task {
       page = .withIndex(viewModel.dateForMonthToInt - 1)
+      viewModel.calendarViewOnAppearAction()
     }
   }
   
   // MARK: - 헤더 뷰
+  
   private var headerView: some View {
     VStack {
       Text(viewModel.dateForMonth.toStringByFormat("M월"))
@@ -57,9 +58,10 @@ struct CalendarView: View {
   }
   
   // MARK: - 날짜 그리드 뷰
+  
   private var calendarGridView: some View {
-    let maxDays: Int = viewModel.maxDays
-    let firstWeekday: Int = viewModel.firstWeekday
+    let maxDays: Int = viewModel.maxDayInMonth
+    let firstWeekday: Int = viewModel.firstWeekdayInMonth
     let monthToInt: Int = viewModel.dateForMonthToInt
     
     return VStack {
@@ -89,6 +91,7 @@ struct CalendarView: View {
 }
 
 // MARK: - 일자 셀 뷰
+
 private struct CellView: View {
   let day: Int
   let month: Int
