@@ -153,7 +153,7 @@
 				BC0828012A81E00900ED1897 /* ViewToImage */,
 				BCAF99172A80E2E200AF3469 /* Chart */,
 				BC61676F2A7CBF9A0071D712 /* Slider */,
-				BCF9D2002A7BA562002DBFD6 /* Common */,
+				BCF9D2002A7BA562002DBFD6 /* Util */,
 				BCF9D1F82A7BA194002DBFD6 /* Calendar */,
 				BCF9D1CA2A7BA147002DBFD6 /* UI_TEMPLETEApp.swift */,
 				BCF9D1CC2A7BA147002DBFD6 /* ContentView.swift */,
@@ -200,13 +200,13 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
-		BCF9D2002A7BA562002DBFD6 /* Common */ = {
+		BCF9D2002A7BA562002DBFD6 /* Util */ = {
 			isa = PBXGroup;
 			children = (
 				BCF9D1FE2A7BA209002DBFD6 /* Extensions.swift */,
 				BCF9D2012A7BA58E002DBFD6 /* CustomViewModifier.swift */,
 			);
-			path = Common;
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
