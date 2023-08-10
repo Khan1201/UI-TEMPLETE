@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct ViewToImagePractice: View {
-  
-  
   @StateObject var viewModel: ViewToImageVM = ViewToImageVM()
 
   var body: some View {
