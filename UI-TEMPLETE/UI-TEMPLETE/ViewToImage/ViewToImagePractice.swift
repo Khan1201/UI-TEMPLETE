@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct ViewToImagePractice: View {
-  @State private var shareImage: ShareImage?
-  @State private var savedImage: UIImage?
+  
   
   @StateObject var viewModel: ViewToImageVM = ViewToImageVM()
 
@@ -30,7 +29,7 @@ struct ViewToImagePractice: View {
             .strokeBorder(Color.red)
         }
         .onTapGesture {
-          shareImage = ShareImage(image: self.snapShot())
+          viewModel.exportOnTapGesture(image: self.snapShot())
         }
       
       Text("Save to Image")
@@ -41,17 +40,15 @@ struct ViewToImagePractice: View {
             .strokeBorder(Color.red)
         }
         .onTapGesture {
-          savedImage = self.snapShot()
-          UIImageWriteToSavedPhotosAlbum(savedImage ?? UIImage(), nil, nil, nil)
+          viewModel.exportOnTapGesture(image: self.snapShot())
         }
     }
     .padding(.bottom, 100)
-    .sheet(item: $shareImage) { shareImage in
+    .sheet(item: $viewModel.shareImage) { shareImage in
       ActivityView(image: shareImage.image)
     }
-    .onChange(of: savedImage, perform: { _ in
-      viewModel.showSaveAlert = true
-      viewModel.isSaveSucceess = true
+    .onChange(of: viewModel.savedImage, perform: { _ in
+      viewModel.savedImageOnChangeAction()
     })
     .alert("저장 \(viewModel.isSaveSucceess ? "성공" : "실패")",
            isPresented: $viewModel.showSaveAlert) {
