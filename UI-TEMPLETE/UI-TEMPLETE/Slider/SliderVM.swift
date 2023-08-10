@@ -15,8 +15,22 @@ final class SliderVM: ObservableObject {
   @Published var touchEnded: Bool = false
   
   let minMaxCount: (CGFloat, CGFloat) = (1, 5)
-  
-  
+}
+
+// MARK: - Gestures..
+
+extension SliderVM {
+  func resetButtonOnTapGesture(stepWidth: CGFloat) {
+    filledWidth = 0
+    nextStepWidth = stepWidth
+    stepedCount = 1
+    touchEnded = false
+  }
+}
+
+// MARK: - Detect actions..
+
+extension SliderVM {
   func dragGestureOnChangedAction(transWidth: CGFloat, stepWidth: CGFloat) {
     
     // 오른쪽으로 쭉 이동
@@ -42,14 +56,11 @@ final class SliderVM: ObservableObject {
     endedWidth = filledWidth
     touchEnded = true
   }
-  
-  func resetButtonOnTapGesture(stepWidth: CGFloat) {
-    filledWidth = 0
-    nextStepWidth = stepWidth
-    stepedCount = 1
-    touchEnded = false
-  }
-  
+}
+
+// MARK: - Appear(onAppear, task)
+
+extension SliderVM {
   func viewWillAppearAction(stepWidth: CGFloat) {
     nextStepWidth = stepWidth
   }
