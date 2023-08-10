@@ -12,8 +12,6 @@ struct CalendarPerWeekView: View {
   @StateObject var viewModel: CalendarPerWeekVM = CalendarPerWeekVM()
   
   var body: some View {
-    let currentWeekIndex: Int = viewModel.currentWeekInMonth - 1
-    
     VStack(alignment: .leading, spacing: 0) {
       HStack(alignment: .center, spacing: 10) {
         
@@ -31,7 +29,7 @@ struct CalendarPerWeekView: View {
               Text(viewModel.weekdaySymbols[i])
                 .font(.system(size: 13, weight: .medium))
               
-              Text("\(viewModel.daysInCurrentWeek[i])")
+              Text("\(viewModel.daysInCurrentWeek[i] == 0 ? "" : "\(viewModel.daysInCurrentWeek[i])")")
                 .font(.system(size: 13, weight: .medium))
             }
           }
