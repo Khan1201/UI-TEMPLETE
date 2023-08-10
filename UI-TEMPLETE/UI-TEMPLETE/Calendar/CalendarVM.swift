@@ -32,7 +32,6 @@ final class CalendarVM: ObservableObject {
 //  private let util: ConstUtil = ConstUtil()
   
   init() {
-    
     setMaxDays()
     setFirstWeekday()
         
