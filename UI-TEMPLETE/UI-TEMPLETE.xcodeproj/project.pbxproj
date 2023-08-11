@@ -12,8 +12,8 @@
 		BCAA71CD2A848E4600A4A006 /* CalendarPerWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAA71CC2A848E4600A4A006 /* CalendarPerWeekView.swift */; };
 		BCAA71CF2A848E5C00A4A006 /* CalendarPerWeekVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAA71CE2A848E5C00A4A006 /* CalendarPerWeekVM.swift */; };
 		BCAF99162A80E25D00AF3469 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = BCAF99152A80E25D00AF3469 /* DGCharts */; };
-		BCAF99192A80E30C00AF3469 /* Pratice.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAF99182A80E30C00AF3469 /* Pratice.swift */; };
 		BCB147692A80D45400857F16 /* SliderVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB147682A80D45400857F16 /* SliderVM.swift */; };
+		BCCD15AD2A85A1FC00BF9A0B /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCD15AC2A85A1FC00BF9A0B /* ChartView.swift */; };
 		BCE484722A8352570004A119 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE484712A8352570004A119 /* ActivityView.swift */; };
 		BCE484772A8389910004A119 /* ViewToImageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE484762A8389910004A119 /* ViewToImageVM.swift */; };
 		BCF9D1CB2A7BA147002DBFD6 /* UI_TEMPLETEApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF9D1CA2A7BA147002DBFD6 /* UI_TEMPLETEApp.swift */; };
@@ -52,8 +52,8 @@
 		BC6167702A7CC30E0071D712 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
 		BCAA71CC2A848E4600A4A006 /* CalendarPerWeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPerWeekView.swift; sourceTree = "<group>"; };
 		BCAA71CE2A848E5C00A4A006 /* CalendarPerWeekVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPerWeekVM.swift; sourceTree = "<group>"; };
-		BCAF99182A80E30C00AF3469 /* Pratice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pratice.swift; sourceTree = "<group>"; };
 		BCB147682A80D45400857F16 /* SliderVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderVM.swift; sourceTree = "<group>"; };
+		BCCD15AC2A85A1FC00BF9A0B /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		BCE484712A8352570004A119 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		BCE484762A8389910004A119 /* ViewToImageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewToImageVM.swift; sourceTree = "<group>"; };
 		BCF9D1C72A7BA147002DBFD6 /* UI-TEMPLETE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UI-TEMPLETE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,7 +122,7 @@
 		BCAF99172A80E2E200AF3469 /* Chart */ = {
 			isa = PBXGroup;
 			children = (
-				BCAF99182A80E30C00AF3469 /* Pratice.swift */,
+				BCCD15AC2A85A1FC00BF9A0B /* ChartView.swift */,
 			);
 			path = Chart;
 			sourceTree = "<group>";
@@ -350,6 +350,7 @@
 				BCE484722A8352570004A119 /* ActivityView.swift in Sources */,
 				BCF9D1FF2A7BA209002DBFD6 /* Extensions.swift in Sources */,
 				BCE484772A8389910004A119 /* ViewToImageVM.swift in Sources */,
+				BCCD15AD2A85A1FC00BF9A0B /* ChartView.swift in Sources */,
 				BCF9D2022A7BA58E002DBFD6 /* CustomViewModifier.swift in Sources */,
 				BCAA71CF2A848E5C00A4A006 /* CalendarPerWeekVM.swift in Sources */,
 				BCF9D1CD2A7BA147002DBFD6 /* ContentView.swift in Sources */,
@@ -358,7 +359,6 @@
 				BCAA71CD2A848E4600A4A006 /* CalendarPerWeekView.swift in Sources */,
 				BCF9D1FC2A7BA1C8002DBFD6 /* CalendarVM.swift in Sources */,
 				BC6167712A7CC30E0071D712 /* SliderView.swift in Sources */,
-				BCAF99192A80E30C00AF3469 /* Pratice.swift in Sources */,
 				BC0828032A81E01F00ED1897 /* ViewToImagePractice.swift in Sources */,
 				BCB147692A80D45400857F16 /* SliderVM.swift in Sources */,
 			);
