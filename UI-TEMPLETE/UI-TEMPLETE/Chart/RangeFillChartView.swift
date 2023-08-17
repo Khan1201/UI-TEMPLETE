@@ -10,7 +10,7 @@ import SwiftUI
 struct RangeFillChartView: View {
   let yList: [Int] = [200, 150, 100, 50, 0]
   let xList: [Int] = [25, 26, 27, 28, 29, 30]
-  let chartValues: [ChartValue] = [.init(value: 160), .init(value: 180), .init(value: 200), .init(value: 200), .init(value: 160), .init(value: 140)]
+  let chartValues: [RangeFillChartValue] = [.init(value: 160), .init(value: 180), .init(value: 200), .init(value: 200), .init(value: 150), .init(value: 200)]
   
   @State private var yTextSize: CGSize = CGSize()
   @State private var yStepSize: CGSize = CGSize()
@@ -23,8 +23,8 @@ struct RangeFillChartView: View {
     let height: CGFloat = 200
     
     var xVertexes: [CGFloat] {
-      var xVertexStart: CGFloat = 7
-      let xVertexStep: CGFloat = xStepSize.width + xTextSize.width
+      var xVertexStart: CGFloat = 0
+      let xVertexStep: CGFloat = xStepSize.width + (xTextSize.width / 2 * 2)
       var result: [CGFloat] = []
 
       for i in 0..<chartValues.count {
@@ -42,7 +42,11 @@ struct RangeFillChartView: View {
     }
 //
     var yVertexes: [CGFloat] {
-      var result: [CGFloat] = chartValues.map { height - CGFloat($0.value) + 4} // +4를 해줘야 점 중앙에 위치함
+      var result: [CGFloat] = chartValues.map {
+        
+        // +5를 해줘야 점 중앙에 위치함
+        height - CGFloat($0.value) + 5
+      }
       result.append(height) // 마지막에 꼭짓점에서 초기 y 값으로 찍으므로, append
       return result
     }
@@ -61,7 +65,7 @@ struct RangeFillChartView: View {
           let yVertexes = yVertexes
           
           Path { path in
-            path.move(to: CGPoint(x: 5, y: height))
+            path.move(to: CGPoint(x: 0, y: height))
 
             path.addLine(to: CGPoint(x: xVertexes[0], y: yVertexes[0]))
             path.addLine(to: CGPoint(x: xVertexes[1], y: yVertexes[1]))
@@ -71,7 +75,7 @@ struct RangeFillChartView: View {
             path.addLine(to: CGPoint(x: xVertexes[5], y: yVertexes[5]))
             path.addLine(to: CGPoint(x: xVertexes[6], y: yVertexes[6]))
 
-            path.addLine(to: CGPoint(x: 5, y: 200))
+            path.addLine(to: CGPoint(x: 0, y: 200))
 
 //              path.move(to: CGPoint(x: 5, y: 200))
 //              path.addLine(to: CGPoint(x: 5, y: 100))
@@ -83,7 +87,7 @@ struct RangeFillChartView: View {
 //              path.addLine(to: CGPoint(x: 280, y: 200))
 //              path.addLine(to: CGPoint(x: 5, y: 200))
           }
-          .fill(Color.blue.opacity(0.3))
+          .fill(Color.red.opacity(0.3))
         }
         .overlay(alignment: .bottom) {
           Rectangle()
@@ -124,6 +128,7 @@ struct RangeFillChartView: View {
               }
             }
           }
+          .padding(.horizontal, -5)
           .offset(x: 0, y: xTextSize.height + 3)
         }
         .overlay(alignment: .bottomLeading) {
@@ -134,12 +139,26 @@ struct RangeFillChartView: View {
                 .frame(width: 5)
                 .padding(.bottom, CGFloat(chartValue.value) * graphHeightRatio)
 
-              if chartValues[chartValues.count - 1].value != chartValue.value {
+              if chartValues[chartValues.count - 1].id != chartValue.id {
                 Spacer()
               }
             }
           }
-          .padding(.horizontal, 5)
+          .padding(.trailing, 5)
+        }
+        .overlay(alignment: .topLeading) {
+          let xVertexes = xVertexes
+          let yVertexes = yVertexes
+          
+          Path { path in
+            path.move(to: CGPoint(x: xVertexes[0], y: yVertexes[0]))
+            path.addLine(to: CGPoint(x: xVertexes[1], y: yVertexes[1]))
+            path.addLine(to: CGPoint(x: xVertexes[2], y: yVertexes[2]))
+            path.addLine(to: CGPoint(x: xVertexes[3], y: yVertexes[3]))
+            path.addLine(to: CGPoint(x: xVertexes[4], y: yVertexes[4]))
+            path.addLine(to: CGPoint(x: xVertexes[5], y: yVertexes[5]))
+          }
+          .stroke(Color.black, lineWidth: 1)
         }
 
       VStack(alignment: .leading, spacing: 0) {
@@ -159,7 +178,7 @@ struct RangeFillChartView_Previews: PreviewProvider {
   }
 }
 
-struct ChartValue: Identifiable {
+struct RangeFillChartValue: Identifiable {
   let id = UUID()
   let value: Int
 }
