@@ -1,5 +1,5 @@
 //
-//  ChartView.swift
+//  RangeFillChartView.swift
 //  UI-TEMPLETE
 //
 //  Created by 윤형석 on 2023/08/11.
@@ -7,11 +7,10 @@
 
 import SwiftUI
 
-struct ChartView: View {
-  
+struct RangeFillChartView: View {
   let yList: [Int] = [200, 150, 100, 50, 0]
   let xList: [Int] = [25, 26, 27, 28, 29, 30]
-  let chartValues: [ChartValue] = [.init(value: 150), .init(value: 180), .init(value: 200), .init(value: 200), .init(value: 150), .init(value: 140)]
+  let chartValues: [ChartValue] = [.init(value: 160), .init(value: 180), .init(value: 200), .init(value: 200), .init(value: 160), .init(value: 140)]
   
   @State private var yTextSize: CGSize = CGSize()
   @State private var yStepSize: CGSize = CGSize()
@@ -24,7 +23,7 @@ struct ChartView: View {
     let height: CGFloat = 200
     
     var xVertexes: [CGFloat] {
-      var xVertexStart: CGFloat = 5
+      var xVertexStart: CGFloat = 7
       let xVertexStep: CGFloat = xStepSize.width + xTextSize.width
       var result: [CGFloat] = []
 
@@ -43,12 +42,12 @@ struct ChartView: View {
     }
 //
     var yVertexes: [CGFloat] {
-      var result: [CGFloat] = chartValues.map { height - CGFloat($0.value)}
+      var result: [CGFloat] = chartValues.map { height - CGFloat($0.value) + 4} // +4를 해줘야 점 중앙에 위치함
       result.append(height) // 마지막에 꼭짓점에서 초기 y 값으로 찍으므로, append
       return result
     }
     
-    // 0에서 시작하므로 0에 해당하는 height를 빼고, 도달하는 위치가 height의 중간부분이며 4개가 존재하므로 텍스트 height / 2 를 한 후 * 4를 한다.
+    // 범위 표시가 y수치의 중앙에 위치해야하므로 (ex - 150을 표현할려면 150의 중앙에 위치해야함) y수치 height의 2/1을 빼고 기존 height에 비율 계산
     let graphHeightRatio: CGFloat = (height - (yTextSize.height / 2)) / height
     
     VStack(alignment: .trailing, spacing: 0) {
@@ -154,9 +153,9 @@ struct ChartView: View {
   }
 }
 
-struct ChartView_Previews: PreviewProvider {
+struct RangeFillChartView_Previews: PreviewProvider {
   static var previews: some View {
-    ChartView()
+    RangeFillChartView()
   }
 }
 
