@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BC0828032A81E01F00ED1897 /* ViewToImagePractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0828022A81E01F00ED1897 /* ViewToImagePractice.swift */; };
+		BC2CA65D2A8F0EEA00166F59 /* FiveLineChartBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2CA65C2A8F0EEA00166F59 /* FiveLineChartBaseView.swift */; };
+		BC2CA6602A8F138600166F59 /* InsideRangeLineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2CA65F2A8F138600166F59 /* InsideRangeLineChartView.swift */; };
 		BC6167712A7CC30E0071D712 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6167702A7CC30E0071D712 /* SliderView.swift */; };
 		BC99F4A82A8DB5160076C0F3 /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC99F4A72A8DB5160076C0F3 /* LineChartView.swift */; };
 		BCAA71CD2A848E4600A4A006 /* CalendarPerWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAA71CC2A848E4600A4A006 /* CalendarPerWeekView.swift */; };
@@ -50,6 +52,8 @@
 
 /* Begin PBXFileReference section */
 		BC0828022A81E01F00ED1897 /* ViewToImagePractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewToImagePractice.swift; sourceTree = "<group>"; };
+		BC2CA65C2A8F0EEA00166F59 /* FiveLineChartBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveLineChartBaseView.swift; sourceTree = "<group>"; };
+		BC2CA65F2A8F138600166F59 /* InsideRangeLineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideRangeLineChartView.swift; sourceTree = "<group>"; };
 		BC6167702A7CC30E0071D712 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
 		BC99F4A72A8DB5160076C0F3 /* LineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartView.swift; sourceTree = "<group>"; };
 		BCAA71CC2A848E4600A4A006 /* CalendarPerWeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPerWeekView.swift; sourceTree = "<group>"; };
@@ -112,6 +116,14 @@
 			path = ViewToImage;
 			sourceTree = "<group>";
 		};
+		BC2CA65E2A8F0EED00166F59 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				BC2CA65C2A8F0EEA00166F59 /* FiveLineChartBaseView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		BC61676F2A7CBF9A0071D712 /* Slider */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,8 +136,10 @@
 		BCAF99172A80E2E200AF3469 /* Chart */ = {
 			isa = PBXGroup;
 			children = (
+				BC2CA65E2A8F0EED00166F59 /* Component */,
 				BCCD15AC2A85A1FC00BF9A0B /* RangeFillChartView.swift */,
 				BC99F4A72A8DB5160076C0F3 /* LineChartView.swift */,
+				BC2CA65F2A8F138600166F59 /* InsideRangeLineChartView.swift */,
 			);
 			path = Chart;
 			sourceTree = "<group>";
@@ -350,9 +364,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC2CA65D2A8F0EEA00166F59 /* FiveLineChartBaseView.swift in Sources */,
 				BCE484722A8352570004A119 /* ActivityView.swift in Sources */,
 				BCF9D1FF2A7BA209002DBFD6 /* Extensions.swift in Sources */,
 				BCE484772A8389910004A119 /* ViewToImageVM.swift in Sources */,
+				BC2CA6602A8F138600166F59 /* InsideRangeLineChartView.swift in Sources */,
 				BCCD15AD2A85A1FC00BF9A0B /* RangeFillChartView.swift in Sources */,
 				BCF9D2022A7BA58E002DBFD6 /* CustomViewModifier.swift in Sources */,
 				BCAA71CF2A848E5C00A4A006 /* CalendarPerWeekVM.swift in Sources */,

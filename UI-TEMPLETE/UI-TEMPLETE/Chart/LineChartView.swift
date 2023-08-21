@@ -21,7 +21,6 @@ struct LineChartView: View {
   let width: CGFloat = 280
   let height: CGFloat = 200
   let circleSize: CGSize = CGSize(width: 5, height: 5)
-  let lineHeight: CGFloat = 3
   
   var body: some View {
     
@@ -58,90 +57,52 @@ struct LineChartView: View {
       return result
     }
     
-    Rectangle()
-      .fill(Color.white)
-      .frame(width: width, height: height)
-      .overlay {
-        VStack(alignment: .leading, spacing: 0) {
-          ForEach(0...4, id: \.self) { i in
-            Rectangle()
-              .fill(Color.gray.opacity(0.3))
-              .frame(height: lineHeight)
-            
-            if i != 4 {
-              Spacer()
-                .getSize(size: $lineStepSize)
-            }
+    FiveLineChartBaseView(
+      lineStepSize: $lineStepSize,
+      xTextSize: $xTextSize,
+      xStepSize: $xStepSize,
+      yTextSize: $yTextSize,
+      yStepSize: $yStepSize,
+      width: width,
+      height: height,
+      xList: xList,
+      yList: yList
+    )
+    .overlay(alignment: .topLeading) {
+      let xVertexes = xVertexes
+      let yVertexes = yVertexes
+      
+      Path { path in
+        path.move(to: CGPoint(x: xVertexes[0], y: yVertexes[0]))
+        path.addLine(to: CGPoint(x: xVertexes[1], y: yVertexes[1]))
+        path.addLine(to: CGPoint(x: xVertexes[2], y: yVertexes[2]))
+        path.addLine(to: CGPoint(x: xVertexes[3], y: yVertexes[3]))
+        path.addLine(to: CGPoint(x: xVertexes[4], y: yVertexes[4]))
+        path.addLine(to: CGPoint(x: xVertexes[5], y: yVertexes[5]))
+      }
+      .stroke(Color.red.opacity(0.4), lineWidth: 2)
+    }
+    .overlay(alignment: .bottomLeading) {
+      
+      HStack(alignment: .bottom, spacing: 0) {
+        ForEach(chartValues, id: \.id) { chartValue in
+          Circle()
+            .fill(Color.pink)
+            .frame(width: circleSize.width, height: circleSize.height)
+            .padding(.bottom, (lineStepSize.height * (CGFloat(chartValue.value - 1)) * 1.055))
+          
+          if chartValues[chartValues.count - 1].id != chartValue.id {
+            Spacer()
           }
         }
       }
-      .overlay(alignment: .bottom) {
-        HStack(alignment: .center, spacing: 0) {
-          ForEach(xList, id: \.self) { x in
-            Text("\(x)")
-              .font(.system(size: 12, weight: .medium))
-              .getSize(size: $xTextSize)
-            
-            if xList[xList.count - 1] != x {
-              Spacer()
-                .getSize(size: $xStepSize)
-            }
-          }
-        }
-        .padding(.horizontal, -5)
-        .offset(y: xTextSize.height + 7)
+    }
+    .overlay(alignment: .bottom) {
+      VStack(alignment: .leading, spacing: 10) {
+        Text("yStepSize: \(yStepSize.height)")
       }
-      .overlay(alignment: .topLeading) {
-        VStack(alignment: .leading, spacing: 0) {
-          ForEach(yList, id: \.self) { y in
-            Text("\(y)")
-              .font(.system(size: 12, weight: .medium))
-              .getSize(size: $yTextSize)
-            
-            if yList[yList.count - 1] != y {
-              Spacer()
-                .getSize(size: $yStepSize)
-            }
-          }
-        }
-        .padding(.vertical, -5)
-        .offset(x: -yTextSize.width - 7)
-      }
-      .overlay(alignment: .topLeading) {
-        let xVertexes = xVertexes
-        let yVertexes = yVertexes
-        
-        Path { path in
-          path.move(to: CGPoint(x: xVertexes[0], y: yVertexes[0]))
-          path.addLine(to: CGPoint(x: xVertexes[1], y: yVertexes[1]))
-          path.addLine(to: CGPoint(x: xVertexes[2], y: yVertexes[2]))
-          path.addLine(to: CGPoint(x: xVertexes[3], y: yVertexes[3]))
-          path.addLine(to: CGPoint(x: xVertexes[4], y: yVertexes[4]))
-          path.addLine(to: CGPoint(x: xVertexes[5], y: yVertexes[5]))
-        }
-        .stroke(Color.red.opacity(0.4), lineWidth: 2)
-      }
-      .overlay(alignment: .bottomLeading) {
-        
-        HStack(alignment: .bottom, spacing: 0) {
-          ForEach(chartValues, id: \.id) { chartValue in
-            Circle()
-              .fill(Color.pink)
-              .frame(width: circleSize.width, height: circleSize.height)
-              .padding(.bottom, (lineStepSize.height * (CGFloat(chartValue.value - 1)) * 1.055))
-
-            if chartValues[chartValues.count - 1].id != chartValue.id {
-              Spacer()
-            }
-          }
-        }
-      }
-      .overlay(alignment: .bottom) {
-        VStack(alignment: .leading, spacing: 10) {
-          Text("yStepSize: \(yStepSize.height)")
-        }
-        .offset(y: 100)
-      }
+      .offset(y: 100)
+    }
   }
   
   struct LineChartView_Previews: PreviewProvider {
