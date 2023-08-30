@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BC0828032A81E01F00ED1897 /* ViewToImagePractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0828022A81E01F00ED1897 /* ViewToImagePractice.swift */; };
 		BC2684402A9F308C00C584C2 /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC26843F2A9F308C00C584C2 /* RoundedTextField.swift */; };
+		BC26844E2A9F448900C584C2 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = BC26844D2A9F448900C584C2 /* PopupView */; };
 		BC2CA65D2A8F0EEA00166F59 /* FiveLineChartBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2CA65C2A8F0EEA00166F59 /* FiveLineChartBaseView.swift */; };
 		BC2CA6602A8F138600166F59 /* InsideRangeLineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2CA65F2A8F138600166F59 /* InsideRangeLineChartView.swift */; };
 		BC6167712A7CC30E0071D712 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6167702A7CC30E0071D712 /* SliderView.swift */; };
@@ -86,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC26844E2A9F448900C584C2 /* PopupView in Frameworks */,
 				BCAF99162A80E25D00AF3469 /* DGCharts in Frameworks */,
 				BCF9D1F72A7BA17C002DBFD6 /* SwiftUIPager in Frameworks */,
 			);
@@ -124,6 +126,25 @@
 				BC26843F2A9F308C00C584C2 /* RoundedTextField.swift */,
 			);
 			path = TextField;
+			sourceTree = "<group>";
+		};
+		BC26844F2A9F449200C584C2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BC26843E2A9F296F00C584C2 /* TextField */,
+				BCAF99172A80E2E200AF3469 /* Chart */,
+				BC61676F2A7CBF9A0071D712 /* Slider */,
+				BCF9D1F82A7BA194002DBFD6 /* Calendar */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BC2684502A9F44B900C584C2 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				BC0828012A81E00900ED1897 /* ViewToImage */,
+			);
+			path = Features;
 			sourceTree = "<group>";
 		};
 		BC2CA65E2A8F0EED00166F59 /* Component */ = {
@@ -177,12 +198,9 @@
 		BCF9D1C92A7BA147002DBFD6 /* UI-TEMPLETE */ = {
 			isa = PBXGroup;
 			children = (
-				BC26843E2A9F296F00C584C2 /* TextField */,
+				BC2684502A9F44B900C584C2 /* Features */,
+				BC26844F2A9F449200C584C2 /* Views */,
 				BCF9D2002A7BA562002DBFD6 /* Util */,
-				BC0828012A81E00900ED1897 /* ViewToImage */,
-				BCAF99172A80E2E200AF3469 /* Chart */,
-				BC61676F2A7CBF9A0071D712 /* Slider */,
-				BCF9D1F82A7BA194002DBFD6 /* Calendar */,
 				BCF9D1CA2A7BA147002DBFD6 /* UI_TEMPLETEApp.swift */,
 				BCF9D1CC2A7BA147002DBFD6 /* ContentView.swift */,
 				BCF9D1CE2A7BA148002DBFD6 /* Assets.xcassets */,
@@ -256,6 +274,7 @@
 			packageProductDependencies = (
 				BCF9D1F62A7BA17C002DBFD6 /* SwiftUIPager */,
 				BCAF99152A80E25D00AF3469 /* DGCharts */,
+				BC26844D2A9F448900C584C2 /* PopupView */,
 			);
 			productName = "UI-TEMPLETE";
 			productReference = BCF9D1C72A7BA147002DBFD6 /* UI-TEMPLETE.app */;
@@ -332,6 +351,7 @@
 			packageReferences = (
 				BCF9D1F52A7BA17C002DBFD6 /* XCRemoteSwiftPackageReference "SwiftUIPager" */,
 				BCAF99142A80E25D00AF3469 /* XCRemoteSwiftPackageReference "Charts" */,
+				BC26844C2A9F448900C584C2 /* XCRemoteSwiftPackageReference "PopupView" */,
 			);
 			productRefGroup = BCF9D1C82A7BA147002DBFD6 /* Products */;
 			projectDirPath = "";
@@ -752,6 +772,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		BC26844C2A9F448900C584C2 /* XCRemoteSwiftPackageReference "PopupView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/PopupView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		BCAF99142A80E25D00AF3469 /* XCRemoteSwiftPackageReference "Charts" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielgindi/Charts.git";
@@ -771,6 +799,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BC26844D2A9F448900C584C2 /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BC26844C2A9F448900C584C2 /* XCRemoteSwiftPackageReference "PopupView" */;
+			productName = PopupView;
+		};
 		BCAF99152A80E25D00AF3469 /* DGCharts */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BCAF99142A80E25D00AF3469 /* XCRemoteSwiftPackageReference "Charts" */;
