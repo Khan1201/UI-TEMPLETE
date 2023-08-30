@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BC0828032A81E01F00ED1897 /* ViewToImagePractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0828022A81E01F00ED1897 /* ViewToImagePractice.swift */; };
+		BC2684402A9F308C00C584C2 /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC26843F2A9F308C00C584C2 /* RoundedTextField.swift */; };
 		BC2CA65D2A8F0EEA00166F59 /* FiveLineChartBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2CA65C2A8F0EEA00166F59 /* FiveLineChartBaseView.swift */; };
 		BC2CA6602A8F138600166F59 /* InsideRangeLineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2CA65F2A8F138600166F59 /* InsideRangeLineChartView.swift */; };
 		BC6167712A7CC30E0071D712 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6167702A7CC30E0071D712 /* SliderView.swift */; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		BC0828022A81E01F00ED1897 /* ViewToImagePractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewToImagePractice.swift; sourceTree = "<group>"; };
+		BC26843F2A9F308C00C584C2 /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
 		BC2CA65C2A8F0EEA00166F59 /* FiveLineChartBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveLineChartBaseView.swift; sourceTree = "<group>"; };
 		BC2CA65F2A8F138600166F59 /* InsideRangeLineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideRangeLineChartView.swift; sourceTree = "<group>"; };
 		BC6167702A7CC30E0071D712 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
@@ -116,6 +118,14 @@
 			path = ViewToImage;
 			sourceTree = "<group>";
 		};
+		BC26843E2A9F296F00C584C2 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				BC26843F2A9F308C00C584C2 /* RoundedTextField.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
 		BC2CA65E2A8F0EED00166F59 /* Component */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +177,7 @@
 		BCF9D1C92A7BA147002DBFD6 /* UI-TEMPLETE */ = {
 			isa = PBXGroup;
 			children = (
+				BC26843E2A9F296F00C584C2 /* TextField */,
 				BCF9D2002A7BA562002DBFD6 /* Util */,
 				BC0828012A81E00900ED1897 /* ViewToImage */,
 				BCAF99172A80E2E200AF3469 /* Chart */,
@@ -371,6 +382,7 @@
 				BC2CA6602A8F138600166F59 /* InsideRangeLineChartView.swift in Sources */,
 				BCCD15AD2A85A1FC00BF9A0B /* RangeFillChartView.swift in Sources */,
 				BCF9D2022A7BA58E002DBFD6 /* CustomViewModifier.swift in Sources */,
+				BC2684402A9F308C00C584C2 /* RoundedTextField.swift in Sources */,
 				BCAA71CF2A848E5C00A4A006 /* CalendarPerWeekVM.swift in Sources */,
 				BCF9D1CD2A7BA147002DBFD6 /* ContentView.swift in Sources */,
 				BCF9D1CB2A7BA147002DBFD6 /* UI_TEMPLETEApp.swift in Sources */,

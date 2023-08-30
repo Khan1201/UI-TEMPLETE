@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "Icon_Asstive_Filled_24_Delete.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "Icon_Asstive_Filled_24_Delete (1).png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "Icon_Asstive_Filled_24_Delete (2).png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
