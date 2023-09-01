@@ -28,6 +28,7 @@
 		BCCD15AD2A85A1FC00BF9A0B /* RangeFillChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCD15AC2A85A1FC00BF9A0B /* RangeFillChartView.swift */; };
 		BCE484722A8352570004A119 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE484712A8352570004A119 /* ActivityView.swift */; };
 		BCE484772A8389910004A119 /* ViewToImageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE484762A8389910004A119 /* ViewToImageVM.swift */; };
+		BCEA183E2AA19F07001D6CBE /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEA183D2AA19F07001D6CBE /* Placeholder.swift */; };
 		BCF9D1CB2A7BA147002DBFD6 /* UI_TEMPLETEApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF9D1CA2A7BA147002DBFD6 /* UI_TEMPLETEApp.swift */; };
 		BCF9D1CD2A7BA147002DBFD6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF9D1CC2A7BA147002DBFD6 /* ContentView.swift */; };
 		BCF9D1CF2A7BA148002DBFD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCF9D1CE2A7BA148002DBFD6 /* Assets.xcassets */; };
@@ -78,6 +79,7 @@
 		BCCD15AC2A85A1FC00BF9A0B /* RangeFillChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeFillChartView.swift; sourceTree = "<group>"; };
 		BCE484712A8352570004A119 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		BCE484762A8389910004A119 /* ViewToImageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewToImageVM.swift; sourceTree = "<group>"; };
+		BCEA183D2AA19F07001D6CBE /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
 		BCF9D1C72A7BA147002DBFD6 /* UI-TEMPLETE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UI-TEMPLETE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCF9D1CA2A7BA147002DBFD6 /* UI_TEMPLETEApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI_TEMPLETEApp.swift; sourceTree = "<group>"; };
 		BCF9D1CC2A7BA147002DBFD6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				BC2684742AA05F7400C584C2 /* GetSize.swift */,
 				BC26845C2AA034BC00C584C2 /* CornerRadius.swift */,
 				BC26847C2AA0671E00C584C2 /* ReceiveKeyboardState.swift */,
+				BCEA183D2AA19F07001D6CBE /* Placeholder.swift */,
 			);
 			path = Modifier;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				BC2684552A9F450C00C584C2 /* BottomPicker.swift in Sources */,
 				BC99F4A82A8DB5160076C0F3 /* LineChartView.swift in Sources */,
 				BC6167712A7CC30E0071D712 /* SliderView.swift in Sources */,
+				BCEA183E2AA19F07001D6CBE /* Placeholder.swift in Sources */,
 				BC0828032A81E01F00ED1897 /* ViewToImagePractice.swift in Sources */,
 				BC2684572AA01E7C00C584C2 /* BottomPickerContents.swift in Sources */,
 				BCB147692A80D45400857F16 /* SliderVM.swift in Sources */,
