@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		BC0828032A81E01F00ED1897 /* ViewToImagePractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0828022A81E01F00ED1897 /* ViewToImagePractice.swift */; };
-		BC2684402A9F308C00C584C2 /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC26843F2A9F308C00C584C2 /* RoundedTextField.swift */; };
+		BC2684402A9F308C00C584C2 /* RoundedTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC26843F2A9F308C00C584C2 /* RoundedTextFieldView.swift */; };
 		BC26844E2A9F448900C584C2 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = BC26844D2A9F448900C584C2 /* PopupView */; };
 		BC2684552A9F450C00C584C2 /* BottomPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2684542A9F450C00C584C2 /* BottomPicker.swift */; };
-		BC2684572AA01E7C00C584C2 /* BottomPickerContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2684562AA01E7C00C584C2 /* BottomPickerContents.swift */; };
+		BC2684572AA01E7C00C584C2 /* BottomPickerView_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2684562AA01E7C00C584C2 /* BottomPickerView_1.swift */; };
 		BC2684592AA0203600C584C2 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2684582AA0203600C584C2 /* Protocols.swift */; };
 		BC26845D2AA034BC00C584C2 /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC26845C2AA034BC00C584C2 /* CornerRadius.swift */; };
 		BC2684722AA05EB800C584C2 /* NaivgationBar_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2684712AA05EB800C584C2 /* NaivgationBar_1.swift */; };
@@ -29,6 +29,11 @@
 		BCE484722A8352570004A119 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE484712A8352570004A119 /* ActivityView.swift */; };
 		BCE484772A8389910004A119 /* ViewToImageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE484762A8389910004A119 /* ViewToImageVM.swift */; };
 		BCEA183E2AA19F07001D6CBE /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEA183D2AA19F07001D6CBE /* Placeholder.swift */; };
+		BCEA18402AA1A06E001D6CBE /* RoundedTextFieldPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEA183F2AA1A06E001D6CBE /* RoundedTextFieldPickerView.swift */; };
+		BCEA18422AA1A164001D6CBE /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEA18412AA1A164001D6CBE /* Types.swift */; };
+		BCEA18442AA1A31D001D6CBE /* BottomDatePickerView_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEA18432AA1A31D001D6CBE /* BottomDatePickerView_1.swift */; };
+		BCEA18462AA1A369001D6CBE /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEA18452AA1A369001D6CBE /* Dummy.swift */; };
+		BCEA18482AA1A526001D6CBE /* PickerExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEA18472AA1A526001D6CBE /* PickerExampleView.swift */; };
 		BCF9D1CB2A7BA147002DBFD6 /* UI_TEMPLETEApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF9D1CA2A7BA147002DBFD6 /* UI_TEMPLETEApp.swift */; };
 		BCF9D1CD2A7BA147002DBFD6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF9D1CC2A7BA147002DBFD6 /* ContentView.swift */; };
 		BCF9D1CF2A7BA148002DBFD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCF9D1CE2A7BA148002DBFD6 /* Assets.xcassets */; };
@@ -61,9 +66,9 @@
 
 /* Begin PBXFileReference section */
 		BC0828022A81E01F00ED1897 /* ViewToImagePractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewToImagePractice.swift; sourceTree = "<group>"; };
-		BC26843F2A9F308C00C584C2 /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
+		BC26843F2A9F308C00C584C2 /* RoundedTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextFieldView.swift; sourceTree = "<group>"; };
 		BC2684542A9F450C00C584C2 /* BottomPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPicker.swift; sourceTree = "<group>"; };
-		BC2684562AA01E7C00C584C2 /* BottomPickerContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPickerContents.swift; sourceTree = "<group>"; };
+		BC2684562AA01E7C00C584C2 /* BottomPickerView_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPickerView_1.swift; sourceTree = "<group>"; };
 		BC2684582AA0203600C584C2 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		BC26845C2AA034BC00C584C2 /* CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
 		BC2684712AA05EB800C584C2 /* NaivgationBar_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaivgationBar_1.swift; sourceTree = "<group>"; };
@@ -80,6 +85,11 @@
 		BCE484712A8352570004A119 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		BCE484762A8389910004A119 /* ViewToImageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewToImageVM.swift; sourceTree = "<group>"; };
 		BCEA183D2AA19F07001D6CBE /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
+		BCEA183F2AA1A06E001D6CBE /* RoundedTextFieldPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextFieldPickerView.swift; sourceTree = "<group>"; };
+		BCEA18412AA1A164001D6CBE /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		BCEA18432AA1A31D001D6CBE /* BottomDatePickerView_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomDatePickerView_1.swift; sourceTree = "<group>"; };
+		BCEA18452AA1A369001D6CBE /* Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummy.swift; sourceTree = "<group>"; };
+		BCEA18472AA1A526001D6CBE /* PickerExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerExampleView.swift; sourceTree = "<group>"; };
 		BCF9D1C72A7BA147002DBFD6 /* UI-TEMPLETE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UI-TEMPLETE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCF9D1CA2A7BA147002DBFD6 /* UI_TEMPLETEApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI_TEMPLETEApp.swift; sourceTree = "<group>"; };
 		BCF9D1CC2A7BA147002DBFD6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -137,7 +147,8 @@
 		BC26843E2A9F296F00C584C2 /* TextField */ = {
 			isa = PBXGroup;
 			children = (
-				BC26843F2A9F308C00C584C2 /* RoundedTextField.swift */,
+				BC26843F2A9F308C00C584C2 /* RoundedTextFieldView.swift */,
+				BCEA183F2AA1A06E001D6CBE /* RoundedTextFieldPickerView.swift */,
 			);
 			path = TextField;
 			sourceTree = "<group>";
@@ -169,6 +180,7 @@
 			children = (
 				BC2684532A9F44F700C584C2 /* Modifier */,
 				BC2684522A9F44E400C584C2 /* Contents */,
+				BCEA18472AA1A526001D6CBE /* PickerExampleView.swift */,
 			);
 			path = Popup;
 			sourceTree = "<group>";
@@ -176,7 +188,8 @@
 		BC2684522A9F44E400C584C2 /* Contents */ = {
 			isa = PBXGroup;
 			children = (
-				BC2684562AA01E7C00C584C2 /* BottomPickerContents.swift */,
+				BC2684562AA01E7C00C584C2 /* BottomPickerView_1.swift */,
+				BCEA18432AA1A31D001D6CBE /* BottomDatePickerView_1.swift */,
 			);
 			path = Contents;
 			sourceTree = "<group>";
@@ -312,6 +325,8 @@
 			children = (
 				BCF9D1FE2A7BA209002DBFD6 /* Extensions.swift */,
 				BC2684582AA0203600C584C2 /* Protocols.swift */,
+				BCEA18412AA1A164001D6CBE /* Types.swift */,
+				BCEA18452AA1A369001D6CBE /* Dummy.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -458,14 +473,17 @@
 			files = (
 				BC2CA65D2A8F0EEA00166F59 /* FiveLineChartBaseView.swift in Sources */,
 				BCE484722A8352570004A119 /* ActivityView.swift in Sources */,
+				BCEA18402AA1A06E001D6CBE /* RoundedTextFieldPickerView.swift in Sources */,
 				BCF9D1FF2A7BA209002DBFD6 /* Extensions.swift in Sources */,
 				BC2684752AA05F7400C584C2 /* GetSize.swift in Sources */,
 				BCE484772A8389910004A119 /* ViewToImageVM.swift in Sources */,
 				BC2CA6602A8F138600166F59 /* InsideRangeLineChartView.swift in Sources */,
+				BCEA18442AA1A31D001D6CBE /* BottomDatePickerView_1.swift in Sources */,
+				BCEA18482AA1A526001D6CBE /* PickerExampleView.swift in Sources */,
 				BCCD15AD2A85A1FC00BF9A0B /* RangeFillChartView.swift in Sources */,
 				BC26845D2AA034BC00C584C2 /* CornerRadius.swift in Sources */,
 				BC2684722AA05EB800C584C2 /* NaivgationBar_1.swift in Sources */,
-				BC2684402A9F308C00C584C2 /* RoundedTextField.swift in Sources */,
+				BC2684402A9F308C00C584C2 /* RoundedTextFieldView.swift in Sources */,
 				BC26847D2AA0671E00C584C2 /* ReceiveKeyboardState.swift in Sources */,
 				BCAA71CF2A848E5C00A4A006 /* CalendarPerWeekVM.swift in Sources */,
 				BC2684592AA0203600C584C2 /* Protocols.swift in Sources */,
@@ -473,13 +491,15 @@
 				BCF9D1CB2A7BA147002DBFD6 /* UI_TEMPLETEApp.swift in Sources */,
 				BCF9D1FB2A7BA1C8002DBFD6 /* CalendarView.swift in Sources */,
 				BCAA71CD2A848E4600A4A006 /* CalendarPerWeekView.swift in Sources */,
+				BCEA18462AA1A369001D6CBE /* Dummy.swift in Sources */,
 				BCF9D1FC2A7BA1C8002DBFD6 /* CalendarVM.swift in Sources */,
 				BC2684552A9F450C00C584C2 /* BottomPicker.swift in Sources */,
 				BC99F4A82A8DB5160076C0F3 /* LineChartView.swift in Sources */,
 				BC6167712A7CC30E0071D712 /* SliderView.swift in Sources */,
 				BCEA183E2AA19F07001D6CBE /* Placeholder.swift in Sources */,
 				BC0828032A81E01F00ED1897 /* ViewToImagePractice.swift in Sources */,
-				BC2684572AA01E7C00C584C2 /* BottomPickerContents.swift in Sources */,
+				BCEA18422AA1A164001D6CBE /* Types.swift in Sources */,
+				BC2684572AA01E7C00C584C2 /* BottomPickerView_1.swift in Sources */,
 				BCB147692A80D45400857F16 /* SliderVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

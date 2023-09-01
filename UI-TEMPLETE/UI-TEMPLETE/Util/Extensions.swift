@@ -113,3 +113,25 @@ extension UIApplication: UIGestureRecognizerDelegate {
       return false
     }
 }
+
+// MARK - Date
+
+extension Date {
+  func toString(format: String) -> String {
+    let formatter = DateFormatter()
+    formatter.dateFormat = format
+    formatter.locale = Locale(identifier: "ko")
+    
+    return formatter.string(from: self)
+  }
+}
+
+extension Date: Selectable {
+  var title: String {
+    return self.toString(format: "yyyy년 M월 dd일")
+  }
+  
+  var value: String {
+    return self.toString(format: "yyyy-M-d")
+  }
+}

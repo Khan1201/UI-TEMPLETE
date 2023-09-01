@@ -1,5 +1,5 @@
 //
-//  BottomPickerContents.swift
+//  BottomPickerView_1.swift
 //  UI-TEMPLETE
 //
 //  Created by 윤형석 on 2023/08/31.
@@ -7,10 +7,11 @@
 
 import SwiftUI
 
-struct BottomPickerContents<T: Selectable>: View {
+struct BottomPickerView_1<T: Selectable>: View {
+  @Binding var isPresented: Bool
   let title: String
   let items: [T]
-  let onTapGesture: () -> Void
+  let onTapGesture: (T) -> Void
   
     var body: some View {
       VStack(alignment: .leading, spacing: 0) {
@@ -27,6 +28,9 @@ struct BottomPickerContents<T: Selectable>: View {
             .frame(width: 24, height: 24)
             .padding(.trailing, 20)
             .padding(.vertical, 20)
+            .onTapGesture {
+              isPresented = false
+            }
         }
         
         VStack(alignment: .leading, spacing: 0) {
@@ -36,48 +40,24 @@ struct BottomPickerContents<T: Selectable>: View {
               .foregroundColor(Color.gray)
               .padding(.vertical, 13.5)
               .onTapGesture {
-                onTapGesture()
+                onTapGesture(item)
               }
           }
         }
-        .padding(.bottom, 45)
+        .padding(.bottom, 50)
       }
       .padding(.leading, 24)
-      .background(.blue)
+      .background(.blue.opacity(0.3))
       .cornerRadius(24, corners: [.topLeft, .topRight])
     }
 }
 
-struct BottomPickerContents_Previews: PreviewProvider {
+struct BottomPickerView_1_Previews: PreviewProvider {
     static var previews: some View {
-      BottomPickerContents<ExampleItem>(title: "해당되는 일차를 선택해 주세요", items: [.test1, .test2, .test3]) {
+      BottomPickerView_1<ExampleItem>(isPresented: .constant(true), title: "해당되는 일차를 선택해 주세요", items: [.test1, .test2, .test3]) { _ in
         ()
       }
     }
 }
 
-enum ExampleItem: Selectable {
-  case test1, test2, test3
-  
-  var title: String {
-    switch self {
-    case .test1:
-      return "테스트1 입니다"
-    case .test2:
-      return "테스트2 입니다"
-    case .test3:
-      return "테스트3 입니다"
-    }
-  }
-  
-  var value: String {
-    switch self {
-    case .test1:
-      return "test_1"
-    case .test2:
-      return "test_2"
-    case .test3:
-      return "test_3"
-    }
-  }
-}
+

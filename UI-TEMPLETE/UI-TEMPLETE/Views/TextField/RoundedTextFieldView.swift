@@ -7,16 +7,16 @@
 
 import SwiftUI
 
-struct RoundedTextField: View {
+struct RoundedTextFieldView: View {
   let title: String?
   let placeholder: String
   @Binding var value: String
-  @Binding var canDone: Bool
+  @Binding var canDone: Bool // 키보드가 올라오면서 버튼이 같이 딸려 올라온다고 가정했을때, 그 버튼에 대한 state
   let maxCount: Int
   var minCount: Int = 1
   var keyboardAppearAction: (() -> Void)?
   var keyboardHideAction: (() -> Void)?
-  var showCurrentMaxCount: Bool = false
+  var showCurrentMaxCount: Bool = false // Int type 입력 -> false, String type 입력 -> true
   
   @FocusState private var isFocused: Bool
   
@@ -112,9 +112,9 @@ struct RoundedTextField: View {
   }
 }
 
-struct RoundedTextField_Previews: PreviewProvider {
+struct RoundedTextFieldView_Previews: PreviewProvider {
   static var previews: some View {
-    RoundedTextField(title: "Title", placeholder: "PlaceHolder", value: .constant(""), canDone: .constant(false),   maxCount: 4)
+    RoundedTextFieldView(title: "Title", placeholder: "PlaceHolder", value: .constant(""), canDone: .constant(false),   maxCount: 4)
   }
 }
 

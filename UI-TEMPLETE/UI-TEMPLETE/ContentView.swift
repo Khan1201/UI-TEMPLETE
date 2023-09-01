@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-      RoundedTextField(showKeyboard: .constant(false), title: "Title", placeHolder: "PlaceHolder", maxCount: 5)
+      InsideRangeLineChartView()
       
     }
 }
