@@ -7,16 +7,14 @@
 
 import Foundation
 
-final class CalendarVM: ObservableObject {
-  
-  @Published private(set) var currentDate: Date = Date()
-  @Published private(set) var dateForMonth: Date = Date()
-  @Published private(set) var maxDayInMonth: Int = 0
-  @Published private(set) var firstWeekdayInMonth: Int = 0
-  @Published private(set) var selectedDayAndMonth: (Int, Int) = (0, 0)
+final class MainCalendarVM: ObservableObject {
+  @Published var selectedDate = Date()
+  @Published var dateForMonth: Date = Date()
+  @Published var maxDayInMonth: Int = 0
+  @Published var firstWeekdayInMonth: Int = 0
   
   var pageData: [Int] {
-    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    return Array(repeating: 0, count: 24)
   }
   
   var weekdaySymbols: [String] {
@@ -26,13 +24,13 @@ final class CalendarVM: ObservableObject {
   }
   
   var dateForMonthToInt: Int {
-    return dateForMonth.toStringByFormat("M").toInt
+    return dateForMonth.toString(format: "M").toInt
   }
 }
 
 // MARK: - Set actions..
 
-extension CalendarVM {
+extension MainCalendarVM {
   /// Set 'maxDays' (해당 월에 존재하는 일자 수)
   func setMaxDayInMonth() {
     maxDayInMonth = Calendar.current.range(of: .day, in: .month, for: dateForMonth)?.count ?? 0
@@ -56,28 +54,26 @@ extension CalendarVM {
     dateForMonth = newMonth
   }
   
-  /// Set 'currentDate' (선택된 날짜)
-  func setCurrentDate(day: Int) {
-    let twoDigitDay = day.toTwoDigitIfOneDigit()
+  func setSelectedDate(day: Int, month: Date) {
+    let monthToInt: Int = month.toString(format: "MM").toInt
+    let yearToInt: Int = month.toString(format: "yyyy").toInt
     
-    let month = Calendar.current.component(.month, from: dateForMonth)
-    let year = Calendar.current.component(.year, from: dateForMonth)
+    var dateComponents = DateComponents()
+    dateComponents.year = yearToInt
+    dateComponents.month = monthToInt
+    dateComponents.day = day
     
-    let dateFormatter = DateFormatter()
-    currentDate = dateFormatter.date(from: "\(year)\(month)\(twoDigitDay)") ?? currentDate
-  }
-  
-  func setSelectedDayAndMonth(dayAndMonth: (Int, Int)) {
-    selectedDayAndMonth = dayAndMonth
+    let result = Calendar.current.date(from: dateComponents) ?? Date()
+    
+    selectedDate = result
   }
 }
 
 // MARK: - Gestures..
 
-extension CalendarVM {
-  func dayOnTapGesture(day: Int, month: Int) {
-    setCurrentDate(day: day)
-    setSelectedDayAndMonth(dayAndMonth: (day, month))
+extension MainCalendarVM {
+  func dayOnTapGesture(day: Int, month: Date) {
+    setSelectedDate(day: day, month: month)
   }
   
   func monthOnTapGesture(isLeft: Bool) {
@@ -94,16 +90,9 @@ extension CalendarVM {
 
 // MARK: - Appear(onApeear, task) action..
 
-extension CalendarVM {
+extension MainCalendarVM {
   func calendarViewOnAppearAction() {
     setMaxDayInMonth()
     setFirstWeekdayInMonth()
-        
-    setSelectedDayAndMonth(
-      dayAndMonth: (
-        Date.currentDateToStringByFormat("d").toInt,
-        Date.currentDateToStringByFormat("M").toInt
-      )
-    )
   }
 }
