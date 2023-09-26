@@ -1,8 +1,8 @@
 //
 //  InsideRangeLineChartView.swift
-//  UI-TEMPLETE
+//  MOMS-SENSE
 //
-//  Created by 윤형석 on 2023/08/18.
+//  Created by 윤형석 on 2023/09/25.
 //
 
 import SwiftUI
@@ -13,15 +13,18 @@ struct InsideRangeLineChartView: View {
   @State private var xStepSize: CGSize = CGSize()
   @State private var yStepSize: CGSize = CGSize()
   @State private var lineStepSize: CGSize = CGSize()
-//  @State private var minMaxIdx: (Int, Int) = (0, 0)
+  @State private var lineChartBaseViewSize: CGSize = CGSize()
   
-  let xList: [Int] = [0, 10, 20, 30, 40]
-  let yList: [Int] = [80, 75, 70, 65, 60]
-  let width: CGFloat = 280
-  let height: CGFloat = 200
-  let vertexWidthHeight: CGFloat = 4
+  var xList: [Int] = [0, 10, 20, 30, 40]
+  var yList: [Int] = [80, 75, 70, 65, 60, 55]
+  var width: CGFloat = 340
+  var chartHeight: CGFloat = 150
+  var vertexWidthHeight: CGFloat = 5
+  var yToLineSpacing: CGFloat = 4
+  var xToLineSpacing: CGFloat = 9
+  let horizontalBaseLineHeight: CGFloat = 1
   
-  let minValues: [CGFloat] = [
+  let minValues: [Double] = [
     60.0,
     60.0,
     60.1,
@@ -64,7 +67,7 @@ struct InsideRangeLineChartView: View {
     71.3
   ]
   
-  let maxValues: [CGFloat] = [
+  let maxValues: [Double] = [
     60.0,
     60.2,
     60.3,
@@ -104,10 +107,20 @@ struct InsideRangeLineChartView: View {
     74.3,
     74.8,
     75.4,
-    75.9
+    75.8
   ]
   
-  let values: [CGFloat] = [
+  let values: [Double] = [
+    60,
+    55,
+    0,
+    55,
+    0,
+    0,
+    55,
+    0,
+    0,
+    60,
     0,
     0,
     0,
@@ -117,47 +130,41 @@ struct InsideRangeLineChartView: View {
     0,
     0,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    65.0,
-    65.4,
-    65.6,
-    65.8,
-    66,
-    68,
-    0,
-    70,
     65,
-    68,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    55,
+    60,
+    65,
     70,
-    72,
+    75,
+    80,
     0,
     0,
     0,
     0,
     0,
     0,
-    0,
-    0
+    55
   ]
   
   var body: some View {
+    let chartVStartPadding: CGFloat = xTextSize.height + xToLineSpacing + vertexWidthHeight
+    let chartHStartPadding: CGFloat = yTextSize.width + yToLineSpacing
+    let valueRatio: CGFloat = 0.926
+    
     var convertedMinValues: [CGFloat] {
       let rangeMin: CGFloat = CGFloat(yList.min() ?? 0)
       let rangeMax: CGFloat = CGFloat(yList.max() ?? 0)
       
       // 0 = 바꿀 range의 최소값, height = 바꿀 range의 최대값
       return minValues.map { value in
-        (value - rangeMin) * (CGFloat(height) - 0) / (rangeMax - rangeMin) + 0
+        (value - rangeMin) * (chartHeight - 0) / (rangeMax - rangeMin) + 0
       }
     }
     
@@ -167,28 +174,28 @@ struct InsideRangeLineChartView: View {
       
       // 0 = 바꿀 range의 최소값, height = 바꿀 range의 최대값
       return maxValues.map { value in
-        (value - rangeMin) * (CGFloat(height) - 0) / (rangeMax - rangeMin) + 0
+        (value - rangeMin) * (chartHeight - 0) / (rangeMax - rangeMin) + 0
       }
     }
     
     var convertedValues: [CGFloat] {
-      let rangeMin: CGFloat = CGFloat(yList.min() ?? 0)
+      let rangeMin: CGFloat = CGFloat(yList.min() ?? 0) - 0.1
       let rangeMax: CGFloat = CGFloat(yList.max() ?? 0)
-      
+
       // 0 = 바꿀 range의 최소값, height = 바꿀 range의 최대값
       return values.map { value in
         if value == 0 {
           return 0
-          
+
         } else {
-          return (value - rangeMin) * (CGFloat(height) - 0) / (rangeMax - rangeMin) + 0
+          return (value - rangeMin) * (chartHeight - 0) / (rangeMax - rangeMin) + 0
         }
       }
     }
     
     var valueSteps: [CGFloat] {
-      var stepSum: Int = 0
-      let step: Int = Int(width) / maxValues.count
+      var stepSum: CGFloat = chartHStartPadding
+      let step: CGFloat = (lineChartBaseViewSize.width - (chartHStartPadding)) / CGFloat(maxValues.count - 1)
       
       return maxValues.map { value in
         if maxValues.first == value {
@@ -201,47 +208,77 @@ struct InsideRangeLineChartView: View {
       }
     }
     
-    FiveLineChartBaseView(
+    LineChartBaseView(
       lineStepSize: $lineStepSize,
       xTextSize: $xTextSize,
       xStepSize: $xStepSize,
       yTextSize: $yTextSize,
       yStepSize: $yStepSize,
-      width: width,
-      height: height,
+      chartHeight: chartHeight,
       xList: xList,
       yList: yList
     )
+    .getSize(size: $lineChartBaseViewSize)
     .overlay(alignment: .bottom) {
       Path { path in
-        path.move(to: CGPoint(x: 0, y: height - convertedMinValues[0]))
-        
-        for i in 1..<minValues.count {
-          path.addLine(to: CGPoint(x: valueSteps[i], y: height - convertedMinValues[i]))
+        path.move(
+          to:
+            CGPoint(
+              x: chartHStartPadding,
+              y: chartHeight - (convertedMinValues[0] + (yTextSize.height / 2)) * valueRatio
+            )
+        )
+        for i in 0..<minValues.count {
+          path.addLine(to:
+                        CGPoint(
+                          x: valueSteps[i],
+                          y: chartHeight - (convertedMinValues[i] + (yTextSize.height / 2)) * valueRatio
+                        )
+          )
         }
         
-        path.addLine(to: CGPoint(x: valueSteps[valueSteps.count - 1], y: height - convertedMaxValues[convertedMaxValues.count - 1]))
+        path.addLine(to:
+                      CGPoint(
+                        x: valueSteps[valueSteps.count - 1],
+                        y: chartHeight - convertedMaxValues[convertedMaxValues.count - 1]
+                      )
+        )
         
         for j in (0..<maxValues.count).reversed() {
-          path.addLine(to: CGPoint(x: valueSteps[j], y: height - convertedMaxValues[j]))
+          path.addLine(to:
+                        CGPoint(
+                          x: valueSteps[j],
+                          y: chartHeight - (convertedMaxValues[j] + (yTextSize.height / 2)) * valueRatio
+                        )
+          )
         }
       }
-      .fill(Color.red.opacity(0.3))
+      .fill(Color.rgb(241, 226, 255))
     }
     .overlay(alignment: .bottom) {
       var vertexIdx: [Int] = []
-
+      
       Path { path in
         var count = 0
         
-        for i in 1..<convertedValues.count {
+        for i in 0..<convertedValues.count {
           if convertedValues[i] != 0 {
             if count == 0 {
-              path.move(to: CGPoint(x: valueSteps[i], y: height - convertedValues[i]))
+              path.move(to:
+                          CGPoint(
+                            x: valueSteps[i],
+                            y: chartHeight - (convertedValues[i] + (yTextSize.height / 2)) * valueRatio
+                          )
+              )
               vertexIdx.append(i)
-
+              
             } else {
-              path.addLine(to: CGPoint(x: valueSteps[i], y: height - convertedValues[i]))
+              path.addLine(to:
+                            CGPoint(
+                              x: valueSteps[i],
+                              y: chartHeight - (convertedValues[i] + (yTextSize.height / 2)) * valueRatio
+                            )
+              )
               vertexIdx.append(i)
             }
             
@@ -249,19 +286,20 @@ struct InsideRangeLineChartView: View {
           }
         }
       }
-      .stroke(Color.red.opacity(0.5))
+      .stroke(Color.rgb(181, 106, 255).opacity(0.4), lineWidth: 2)
       .overlay(alignment: .bottomLeading) {
         ZStack(alignment: .bottomLeading) {
           ForEach(vertexIdx, id: \.self) { i in
-              Circle()
-                .fill(Color.pink)
-                .frame(width: vertexWidthHeight, height: vertexWidthHeight)
-                .padding(.bottom, convertedValues[i] - vertexWidthHeight / 2)
-                .padding(.leading, valueSteps[i] - vertexWidthHeight / 2)
+            Circle()
+              .fill(Color.rgb(181, 106, 255))
+              .frame(width: vertexWidthHeight, height: vertexWidthHeight)
+              .padding(.bottom, (chartVStartPadding + convertedValues[i]) * valueRatio)
+              .padding(.leading, valueSteps[i] - vertexWidthHeight / 2)
           }
         }
       }
     }
+    .padding(.horizontal, 20)
   }
 }
 
@@ -270,3 +308,4 @@ struct InsideRangeLineChartView_Previews: PreviewProvider {
     InsideRangeLineChartView()
   }
 }
+

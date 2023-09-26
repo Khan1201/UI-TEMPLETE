@@ -13,96 +13,112 @@ struct LineChartView: View {
   @State private var xStepSize: CGSize = CGSize()
   @State private var yStepSize: CGSize = CGSize()
   @State private var lineStepSize: CGSize = CGSize()
+  @State private var lineChartBaseViewSize: CGSize = CGSize()
+
+  let xList: [Int] = [1, 2, 3, 4, 5]
+  let yList: [Int] = [10, 20, 30, 40, 50].reversed()
+  let values: [Int] = [15, 25, 30, 35, 45, 50, 30, 40, 50, 20]
   
-  let xList: [Int] = [25, 26, 27, 28, 29, 30]
-  let yList: [Int] = [5, 4, 3, 2, 1]
-  let chartValues: [LineChartValue] = [.init(value: 3), .init(value: 4.5), .init(value: 3.8), .init(value: 3.1), .init(value: 2.8), .init(value: 2.7)]
-  
-  let width: CGFloat = 280
-  let height: CGFloat = 200
-  let circleSize: CGSize = CGSize(width: 5, height: 5)
+  var width: CGFloat = 340
+  var chartHeight: CGFloat = 150
+  var vertexWidthHeight: CGFloat = 5
+  var yToLineSpacing: CGFloat = 4
+  var xToLineSpacing: CGFloat = 9
+  let horizontalBaseLineHeight: CGFloat = 1
   
   var body: some View {
+    let chartVStartPadding: CGFloat = xTextSize.height + xToLineSpacing + vertexWidthHeight
+    let chartHStartPadding: CGFloat = yTextSize.width + yToLineSpacing
+    let valueRatio: CGFloat = 0.926
     
-    var xVertexes: [CGFloat] {
+    var convertedValues: [CGFloat] {
       
-      // Cicle 중간에 path 찍기위해 시작점은 circle width / 2
-      var xVertexStart: CGFloat = circleSize.width / 2
-      
-      // x축 간의 간격 + x축 아이템 width(x축 아이템 width 반틈 + x축 아이템 width 반틈)
-      let xVertexStep: CGFloat = xStepSize.width + (xTextSize.width / 2 * 2)
-      var result: [CGFloat] = []
-      
-      for i in 0..<chartValues.count {
-        if i == 0 {
-          result.append(xVertexStart)
-          
+      /// -1 하지 않으면 범위의 젤 작은값이 들어오면 보이지 않는다.
+      let rangeMin: CGFloat = CGFloat(yList.min() ?? 0) - 1
+      let rangeMax: CGFloat = CGFloat(yList.max() ?? 0)
+
+      // 0 = 바꿀 range의 최소값, height = 바꿀 range의 최대값
+      return values.map { value in
+        if value == 0 {
+          return 0
+
         } else {
-          xVertexStart += xVertexStep
-          result.append(xVertexStart)
+          return (CGFloat(value) - rangeMin) * (chartHeight - 0) / (rangeMax - rangeMin) + 0
         }
       }
-      
-      return result
     }
     
-    var yVertexes: [CGFloat] {
+    var valueSteps: [CGFloat] {
+      var stepSum: CGFloat = chartHStartPadding
+      let step: CGFloat = (lineChartBaseViewSize.width - (chartHStartPadding)) / CGFloat(values.count - 1)
       
-      // path를 그릴때 CGPoint 첫 위치인 (0,0)은 좌측 상단부터 기준으로 하므로, heignt - 로 시작한다.
-      // 각 line 단계별 height * 표현할 value (line 단계별 height 를 지나간 개수로 파악하면 되므로, 표현할 value - 1을 한다)
-      // * 1.055 -> 3, 4, 5 이렇게 값이 증가할 때, line 자체의 height의 크기에 영향을 받으므로(표현할 value가 2이면 1개의 line height에 영향을 받았고, value가 4이면 3개의 line height에 영향을 받음) 비율을 맞춰준다.
-      // + 2.5 -> 원형 height의 2/1을 더해준다.
-      var result: [CGFloat] = chartValues.map { height - (lineStepSize.height * (CGFloat($0.value - 1)) * 1.055 + 2.5)} // +4를 해줘야 점 중앙에 위치함
-      result.append(height) // 마지막에 꼭짓점에서 초기 y 값으로 찍으므로, append
-      return result
+      return values.map { value in
+        if values.first == value {
+          return CGFloat(stepSum)
+          
+        } else {
+          stepSum += step
+          return CGFloat(stepSum)
+        }
+      }
     }
     
-    FiveLineChartBaseView(
+    LineChartBaseView(
       lineStepSize: $lineStepSize,
       xTextSize: $xTextSize,
       xStepSize: $xStepSize,
       yTextSize: $yTextSize,
       yStepSize: $yStepSize,
-      width: width,
-      height: height,
+      chartHeight: chartHeight,
       xList: xList,
       yList: yList
     )
-    .overlay(alignment: .topLeading) {
-      let xVertexes = xVertexes
-      let yVertexes = yVertexes
+    .getSize(size: $lineChartBaseViewSize)
+    .overlay(alignment: .bottom) {
+      var vertexIdx: [Int] = []
       
       Path { path in
-        path.move(to: CGPoint(x: xVertexes[0], y: yVertexes[0]))
-        path.addLine(to: CGPoint(x: xVertexes[1], y: yVertexes[1]))
-        path.addLine(to: CGPoint(x: xVertexes[2], y: yVertexes[2]))
-        path.addLine(to: CGPoint(x: xVertexes[3], y: yVertexes[3]))
-        path.addLine(to: CGPoint(x: xVertexes[4], y: yVertexes[4]))
-        path.addLine(to: CGPoint(x: xVertexes[5], y: yVertexes[5]))
+        var count = 0
+        
+        for i in 0..<convertedValues.count {
+          if convertedValues[i] != 0 {
+            if count == 0 {
+              path.move(to:
+                          CGPoint(
+                            x: valueSteps[i],
+                            y: chartHeight - (convertedValues[i] + (yTextSize.height / 2)) * valueRatio
+                          )
+              )
+              vertexIdx.append(i)
+              
+            } else {
+              path.addLine(to:
+                            CGPoint(
+                              x: valueSteps[i],
+                              y: chartHeight - (convertedValues[i] + (yTextSize.height / 2)) * valueRatio
+                            )
+              )
+              vertexIdx.append(i)
+            }
+            
+            count += 1
+          }
+        }
       }
-      .stroke(Color.red.opacity(0.4), lineWidth: 2)
-    }
-    .overlay(alignment: .bottomLeading) {
-      
-      HStack(alignment: .bottom, spacing: 0) {
-        ForEach(chartValues, id: \.id) { chartValue in
-          Circle()
-            .fill(Color.pink)
-            .frame(width: circleSize.width, height: circleSize.height)
-            .padding(.bottom, (lineStepSize.height * (CGFloat(chartValue.value - 1)) * 1.055))
-          
-          if chartValues[chartValues.count - 1].id != chartValue.id {
-            Spacer()
+      .stroke(Color.rgb(181, 106, 255).opacity(0.4), lineWidth: 2)
+      .overlay(alignment: .bottomLeading) {
+        ZStack(alignment: .bottomLeading) {
+          ForEach(vertexIdx, id: \.self) { i in
+            Circle()
+              .fill(Color.rgb(181, 106, 255))
+              .frame(width: vertexWidthHeight, height: vertexWidthHeight)
+              .padding(.bottom, (chartVStartPadding + convertedValues[i]) * valueRatio)
+              .padding(.leading, valueSteps[i] - vertexWidthHeight / 2)
           }
         }
       }
     }
-    .overlay(alignment: .bottom) {
-      VStack(alignment: .leading, spacing: 10) {
-        Text("yStepSize: \(yStepSize.height)")
-      }
-      .offset(y: 100)
-    }
+    .padding(.horizontal, 24) // test
   }
   
   struct LineChartView_Previews: PreviewProvider {
