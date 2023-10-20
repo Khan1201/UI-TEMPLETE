@@ -14,10 +14,13 @@ final class SliderVM: ObservableObject {
   @Published var stepedCount: CGFloat = 0
   @Published var touchEnded: Bool = false
   
-  let height: CGFloat = 5
+  let scoreTopPadding: CGFloat
+  let horizontalPadding: CGFloat
+  let maxCount: Int
+  let lineHeight: CGFloat
+  let circleWidthHeight: CGFloat
+  
   let minCount: Int = 1
-  let maxCount: Int = 5
-  let circleWidthHeight: CGFloat = 16
   var stepWidth: CGFloat = 0
   
   var isDragAvailable: Bool {
@@ -29,7 +32,21 @@ final class SliderVM: ObservableObject {
   }
   
   var scoreYOffset: CGFloat {
-    return circleWidthHeight + 5 // 5 = vertical padding
+    return circleWidthHeight + scoreTopPadding
+  }
+  
+  init(
+    scoreTopPadding: CGFloat = 5,
+    horizontalPadding: CGFloat = 48,
+    maxCount: Int = 5,
+    lineHeight: CGFloat = 5,
+    circleWidthHeight: CGFloat = 16
+  ) {
+    self.scoreTopPadding = scoreTopPadding
+    self.horizontalPadding = horizontalPadding
+    self.maxCount = maxCount
+    self.lineHeight = lineHeight
+    self.circleWidthHeight = circleWidthHeight
   }
 }
 
@@ -77,10 +94,9 @@ extension SliderVM {
 
 extension SliderVM {
   func viewOnAppearAction(
-    screenWidth: CGFloat,
-    horizontalPadding: CGFloat
+    screenWidth: CGFloat
   ) {
-    setStepWidth(screenWidth: screenWidth, horizontalPadding: horizontalPadding)
+    setStepWidth(screenWidth: screenWidth)
     nextStepWidth = stepWidth
   }
 }
@@ -111,8 +127,7 @@ extension SliderVM {
 
 extension SliderVM {
   func setStepWidth(
-    screenWidth: CGFloat,
-    horizontalPadding: CGFloat
+    screenWidth: CGFloat
   ) {
       stepWidth = (screenWidth - horizontalPadding) / (CGFloat(maxCount) - 1)
   }
