@@ -38,7 +38,7 @@ struct ViewToImagePractice: View {
             .strokeBorder(Color.red)
         }
         .onTapGesture {
-          viewModel.exportOnTapGesture(image: self.snapShot())
+          viewModel.saveOnTapGesture(image: self.snapShot())
         }
     }
     .padding(.bottom, 100)
