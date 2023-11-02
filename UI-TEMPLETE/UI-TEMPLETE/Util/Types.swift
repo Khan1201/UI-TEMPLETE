@@ -32,3 +32,7 @@ enum ExampleItem: Selectable {
     }
   }
 }
+
+enum BloodSugarChartType: String {
+  case all, dietAndAfterEat, emptyAndBeforeEat, diet, afterEatActivity
+}
