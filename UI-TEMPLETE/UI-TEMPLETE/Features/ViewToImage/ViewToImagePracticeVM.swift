@@ -1,5 +1,5 @@
 //
-//  ViewToImageVM.swift
+//  ViewToImagePracticeVM.swift
 //  UI-TEMPLETE
 //
 //  Created by 윤형석 on 2023/08/09.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-final class ViewToImageVM: ObservableObject {
+final class ViewToImagePracticeVM: ObservableObject {
   @Published var shareImage: ShareImage?
   @Published private(set) var savedImage: UIImage?
   @Published var showSaveAlert: Bool = false
@@ -17,7 +17,7 @@ final class ViewToImageVM: ObservableObject {
 
 //MARK: - Gesture..
 
-extension ViewToImageVM {
+extension ViewToImagePracticeVM {
   func exportOnTapGesture(image: UIImage) {
     shareImage = ShareImage(image: image)
   }
@@ -30,7 +30,7 @@ extension ViewToImageVM {
 
 //MARK: - Detect actions..
 
-extension ViewToImageVM {
+extension ViewToImagePracticeVM {
   func savedImageOnChangeAction() {
     showSaveAlert = true
     isSaveSucceess = true

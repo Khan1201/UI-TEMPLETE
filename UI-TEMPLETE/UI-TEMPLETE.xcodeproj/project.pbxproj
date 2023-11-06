@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BC0828032A81E01F00ED1897 /* ViewToImagePractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0828022A81E01F00ED1897 /* ViewToImagePractice.swift */; };
+		BC0828032A81E01F00ED1897 /* ViewToImagePracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0828022A81E01F00ED1897 /* ViewToImagePracticeView.swift */; };
 		BC2684402A9F308C00C584C2 /* RoundedTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC26843F2A9F308C00C584C2 /* RoundedTextFieldView.swift */; };
 		BC26844E2A9F448900C584C2 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = BC26844D2A9F448900C584C2 /* PopupView */; };
 		BC2684552A9F450C00C584C2 /* BottomPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2684542A9F450C00C584C2 /* BottomPicker.swift */; };
@@ -36,7 +36,7 @@
 		BCB147692A80D45400857F16 /* SliderVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB147682A80D45400857F16 /* SliderVM.swift */; };
 		BCCD15AD2A85A1FC00BF9A0B /* RangeFillChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCD15AC2A85A1FC00BF9A0B /* RangeFillChartView.swift */; };
 		BCE484722A8352570004A119 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE484712A8352570004A119 /* ActivityView.swift */; };
-		BCE484772A8389910004A119 /* ViewToImageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE484762A8389910004A119 /* ViewToImageVM.swift */; };
+		BCE484772A8389910004A119 /* ViewToImagePracticeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE484762A8389910004A119 /* ViewToImagePracticeVM.swift */; };
 		BCEA183E2AA19F07001D6CBE /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEA183D2AA19F07001D6CBE /* Placeholder.swift */; };
 		BCEA18402AA1A06E001D6CBE /* RoundedTextFieldPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEA183F2AA1A06E001D6CBE /* RoundedTextFieldPickerView.swift */; };
 		BCEA18422AA1A164001D6CBE /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEA18412AA1A164001D6CBE /* Types.swift */; };
@@ -73,7 +73,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BC0828022A81E01F00ED1897 /* ViewToImagePractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewToImagePractice.swift; sourceTree = "<group>"; };
+		BC0828022A81E01F00ED1897 /* ViewToImagePracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewToImagePracticeView.swift; sourceTree = "<group>"; };
 		BC26843F2A9F308C00C584C2 /* RoundedTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextFieldView.swift; sourceTree = "<group>"; };
 		BC2684542A9F450C00C584C2 /* BottomPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPicker.swift; sourceTree = "<group>"; };
 		BC2684562AA01E7C00C584C2 /* BottomPickerView_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPickerView_1.swift; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 		BCB147682A80D45400857F16 /* SliderVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderVM.swift; sourceTree = "<group>"; };
 		BCCD15AC2A85A1FC00BF9A0B /* RangeFillChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeFillChartView.swift; sourceTree = "<group>"; };
 		BCE484712A8352570004A119 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
-		BCE484762A8389910004A119 /* ViewToImageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewToImageVM.swift; sourceTree = "<group>"; };
+		BCE484762A8389910004A119 /* ViewToImagePracticeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewToImagePracticeVM.swift; sourceTree = "<group>"; };
 		BCEA183D2AA19F07001D6CBE /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
 		BCEA183F2AA1A06E001D6CBE /* RoundedTextFieldPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextFieldPickerView.swift; sourceTree = "<group>"; };
 		BCEA18412AA1A164001D6CBE /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
@@ -153,9 +153,8 @@
 		BC0828012A81E00900ED1897 /* ViewToImage */ = {
 			isa = PBXGroup;
 			children = (
-				BC0828022A81E01F00ED1897 /* ViewToImagePractice.swift */,
-				BCE484762A8389910004A119 /* ViewToImageVM.swift */,
-				BCE484712A8352570004A119 /* ActivityView.swift */,
+				BC0828022A81E01F00ED1897 /* ViewToImagePracticeView.swift */,
+				BCE484762A8389910004A119 /* ViewToImagePracticeVM.swift */,
 			);
 			path = ViewToImage;
 			sourceTree = "<group>";
@@ -272,6 +271,7 @@
 			children = (
 				BC9901582AF91B45001E88AD /* CameraPickerView.swift */,
 				BC99015A2AF91B51001E88AD /* GalleryPickerView.swift */,
+				BCE484712A8352570004A119 /* ActivityView.swift */,
 			);
 			path = ViewControllerRepresentable;
 			sourceTree = "<group>";
@@ -516,7 +516,7 @@
 				BCEA18402AA1A06E001D6CBE /* RoundedTextFieldPickerView.swift in Sources */,
 				BCF9D1FF2A7BA209002DBFD6 /* Extensions.swift in Sources */,
 				BC2684752AA05F7400C584C2 /* GetSize.swift in Sources */,
-				BCE484772A8389910004A119 /* ViewToImageVM.swift in Sources */,
+				BCE484772A8389910004A119 /* ViewToImagePracticeVM.swift in Sources */,
 				BC2CA6602A8F138600166F59 /* InsideRangeLineChartView.swift in Sources */,
 				BCEA18442AA1A31D001D6CBE /* BottomDatePickerView_1.swift in Sources */,
 				BCEA18482AA1A526001D6CBE /* PickerExampleView.swift in Sources */,
@@ -542,7 +542,7 @@
 				BC99F4A82A8DB5160076C0F3 /* LineChartView.swift in Sources */,
 				BC6167712A7CC30E0071D712 /* SliderView.swift in Sources */,
 				BCEA183E2AA19F07001D6CBE /* Placeholder.swift in Sources */,
-				BC0828032A81E01F00ED1897 /* ViewToImagePractice.swift in Sources */,
+				BC0828032A81E01F00ED1897 /* ViewToImagePracticeView.swift in Sources */,
 				BC4061D22ABD60C000907928 /* MonthCalendarHeaderView.swift in Sources */,
 				BCEA18422AA1A164001D6CBE /* Types.swift in Sources */,
 				BC4061D62ABD60D400907928 /* MonthCalendarCellView.swift in Sources */,
