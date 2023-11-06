@@ -27,6 +27,8 @@
 		BC6167712A7CC30E0071D712 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6167702A7CC30E0071D712 /* SliderView.swift */; };
 		BC9901592AF91B45001E88AD /* CameraPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9901582AF91B45001E88AD /* CameraPickerView.swift */; };
 		BC99015B2AF91B51001E88AD /* GalleryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC99015A2AF91B51001E88AD /* GalleryPickerView.swift */; };
+		BC99015D2AF922A7001E88AD /* MiddleAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC99015C2AF922A7001E88AD /* MiddleAlert.swift */; };
+		BC9901612AF92340001E88AD /* BottomNoticeFloater.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9901602AF92340001E88AD /* BottomNoticeFloater.swift */; };
 		BC99F4A82A8DB5160076C0F3 /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC99F4A72A8DB5160076C0F3 /* LineChartView.swift */; };
 		BCAA71CD2A848E4600A4A006 /* CalendarPerWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAA71CC2A848E4600A4A006 /* CalendarPerWeekView.swift */; };
 		BCAA71CF2A848E5C00A4A006 /* CalendarPerWeekVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAA71CE2A848E5C00A4A006 /* CalendarPerWeekVM.swift */; };
@@ -90,6 +92,8 @@
 		BC6167702A7CC30E0071D712 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
 		BC9901582AF91B45001E88AD /* CameraPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPickerView.swift; sourceTree = "<group>"; };
 		BC99015A2AF91B51001E88AD /* GalleryPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPickerView.swift; sourceTree = "<group>"; };
+		BC99015C2AF922A7001E88AD /* MiddleAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleAlert.swift; sourceTree = "<group>"; };
+		BC9901602AF92340001E88AD /* BottomNoticeFloater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNoticeFloater.swift; sourceTree = "<group>"; };
 		BC99F4A72A8DB5160076C0F3 /* LineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartView.swift; sourceTree = "<group>"; };
 		BCAA71CC2A848E4600A4A006 /* CalendarPerWeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPerWeekView.swift; sourceTree = "<group>"; };
 		BCAA71CE2A848E5C00A4A006 /* CalendarPerWeekVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPerWeekVM.swift; sourceTree = "<group>"; };
@@ -211,6 +215,8 @@
 			isa = PBXGroup;
 			children = (
 				BC2684542A9F450C00C584C2 /* BottomPicker.swift */,
+				BC99015C2AF922A7001E88AD /* MiddleAlert.swift */,
+				BC9901602AF92340001E88AD /* BottomNoticeFloater.swift */,
 			);
 			path = Modifier;
 			sourceTree = "<group>";
@@ -519,6 +525,7 @@
 				BC2684722AA05EB800C584C2 /* NaivgationBar_1.swift in Sources */,
 				BC2684402A9F308C00C584C2 /* RoundedTextFieldView.swift in Sources */,
 				BC26847D2AA0671E00C584C2 /* ReceiveKeyboardState.swift in Sources */,
+				BC99015D2AF922A7001E88AD /* MiddleAlert.swift in Sources */,
 				BCAA71CF2A848E5C00A4A006 /* CalendarPerWeekVM.swift in Sources */,
 				BC2684592AA0203600C584C2 /* Protocols.swift in Sources */,
 				BC4061D42ABD60CA00907928 /* MonthCalendarDaysView.swift in Sources */,
@@ -526,6 +533,7 @@
 				BC4061CF2ABD601000907928 /* MonthCalendarView.swift in Sources */,
 				BCF9D1CB2A7BA147002DBFD6 /* UI_TEMPLETEApp.swift in Sources */,
 				BC9901592AF91B45001E88AD /* CameraPickerView.swift in Sources */,
+				BC9901612AF92340001E88AD /* BottomNoticeFloater.swift in Sources */,
 				BC5025AD2AF38E4F004729F7 /* SelectableRangeFillChartView.swift in Sources */,
 				BCAA71CD2A848E4600A4A006 /* CalendarPerWeekView.swift in Sources */,
 				BCEA18462AA1A369001D6CBE /* Dummy.swift in Sources */,
