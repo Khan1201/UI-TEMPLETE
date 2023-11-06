@@ -1,5 +1,5 @@
 //
-//  ViewToImagePractice.swift
+//  ViewToImagePracticeView.swift
 //  UI-TEMPLETE
 //
 //  Created by 윤형석 on 2023/08/08.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct ViewToImagePractice: View {
-  @StateObject var viewModel: ViewToImageVM = ViewToImageVM()
+struct ViewToImagePracticeView: View {
+  @StateObject var viewModel: ViewToImagePracticeVM = ViewToImagePracticeVM()
 
   var body: some View {
     VStack {
@@ -55,13 +55,13 @@ struct ViewToImagePractice: View {
   }
 }
 
-struct ViewToImagePractice_Previews: PreviewProvider {
+struct ViewToImagePracticeView_Previews: PreviewProvider {
   static var previews: some View {
-    ViewToImagePractice()
+    ViewToImagePracticeView()
   }
 }
 
-extension ViewToImagePractice {
+extension ViewToImagePracticeView {
   var textView: some View {
     
     Text("Hello, SwiftUI")
